@@ -10,6 +10,7 @@ import luigidifraia.u5s1g1.esercizio1.Esercizio1;
 import luigidifraia.u5s1g1.esercizio2.Boscaiola;
 import luigidifraia.u5s1g1.esercizio2.Diavola;
 import luigidifraia.u5s1g1.esercizio2.Margherita;
+import luigidifraia.u5s1g1.esercizio2.MozzarellaExtra;
 import luigidifraia.u5s1g1.esercizio2.SalameExtra;
 
 @SpringBootApplication
@@ -19,6 +20,11 @@ public class U5S1G1Application {
 	public static void main(String[] args) {
 		SpringApplication.run(U5S1G1Application.class, args);
 		configWithConfigurationAnnotation();
+		Margherita margh = new Margherita();
+		SalameExtra salame = new SalameExtra(margh);
+		SalameExtra salamex2 = new SalameExtra(salame);
+		MozzarellaExtra mozzarella = new MozzarellaExtra(salamex2);
+		log.info(mozzarella.toString());
 	}
 
 	public static void configWithConfigurationAnnotation() {
