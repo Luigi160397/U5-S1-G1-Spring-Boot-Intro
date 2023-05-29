@@ -21,7 +21,10 @@ public class U5S1G1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(U5S1G1Application.class, args);
+
+		log.info("------------------- Con Bean Config -------------------");
 		configWithConfigurationAnnotation();
+		log.info("------------------- Senza Bean Config -------------------");
 		Margherita margh = new Margherita();
 		SalameExtra salame = new SalameExtra(margh);
 		SalameExtra salamex2 = new SalameExtra(salame);
