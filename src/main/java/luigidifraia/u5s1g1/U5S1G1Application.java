@@ -11,6 +11,8 @@ import luigidifraia.u5s1g1.esercizio2.Boscaiola;
 import luigidifraia.u5s1g1.esercizio2.Diavola;
 import luigidifraia.u5s1g1.esercizio2.Margherita;
 import luigidifraia.u5s1g1.esercizio2.MozzarellaExtra;
+import luigidifraia.u5s1g1.esercizio2.PizzaXL;
+import luigidifraia.u5s1g1.esercizio2.ProsciuttoExtra;
 import luigidifraia.u5s1g1.esercizio2.SalameExtra;
 
 @SpringBootApplication
@@ -24,7 +26,11 @@ public class U5S1G1Application {
 		SalameExtra salame = new SalameExtra(margh);
 		SalameExtra salamex2 = new SalameExtra(salame);
 		MozzarellaExtra mozzarella = new MozzarellaExtra(salamex2);
-		log.info(mozzarella.toString());
+		ProsciuttoExtra prosciutto = new ProsciuttoExtra(mozzarella);
+		Boscaiola boscaiola = new Boscaiola();
+		PizzaXL boscaiolaLarge = new PizzaXL(boscaiola);
+		log.info(boscaiolaLarge.toString());
+		log.info(prosciutto.toString());
 	}
 
 	public static void configWithConfigurationAnnotation() {
